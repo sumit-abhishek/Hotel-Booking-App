@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/confirmation-style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="booking-confirm-main">
+      <div class="booking-confirm">
+        <div class="booking-confirm-top">
+          <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="/index.html" type="button" id="homeNav">Home</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="rooms.html">Hotel Details</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="reservation.html">Reservation Details</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Confirmation Details
+              </li>
+            </ol>
+          </nav>
+        </div>
+        <div class="booking-confirm-bottom">
+          <div class="booking-confirm-bottom-left">
+            <div class="card">
+              <h3 class="card-header" style="text-align: center">
+                <i class="fa-solid fa-circle-check" style="color: #00cc00"></i>
+                Booking Confirmed
+              </h3>
+              <div class="card-body d-flex justify-content-start gap-3">
+                <div class="card-body-image">
+                  <img
+                    src="../Assets/user-image.png"
+                    alt=""
+                    style="object-fit: cover; height: 100%; width: 100%"
+                  />
+                </div>
+                <div class="card-body-desc">
+                  <h5 class="card-title">
+                    Hello, <span id="loginUser">User</span>
+                  </h5>
+                  <p class="card-text">
+                    <b><span id="stay-name">Kantal Orchid's</span></b> will be
+                    expecting you on
+                    <span id="arrivalDate">25-May-2024</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4 mb-4 mb-sm-0">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <i class="fa-regular fa-calendar"></i> Check-In Date
+                    </h5>
+                    <p class="card-text" id="dateOfIn">25-May-2024</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 mb-4 mb-sm-0">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <i class="fa-regular fa-calendar"></i> Check-Out Date
+                    </h5>
+                    <p class="card-text" id="dateOfOut">27-May-2024</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 mb-4 mb-sm-0">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <i class="fa-solid fa-user"></i> Total People
+                    </h5>
+                    <p class="card-text"><span id="people">2</span> People</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <div
+                  class="btn-group-vertically d-flex justify-content-center gap-5"
+                  role="group"
+                >
+                  <button
+                    type="button"
+                    id="home-button"
+                    class="btn btn-primary"
+                    onclick=""
+                  >
+                    Back To Home
+                  </button>
+                  <a
+                    class="btn btn-danger"
+                    href="#"
+                    role="button"
+                    onclick="showCustomAlert();"
+                    data-bs-toggle="modal"
+                    data-bs-target="#customAlert"
+                    >Cancel Reservation</a
+                  >
+                  <!-- Custom Alert -->
+                  <div class="modal fade" tabindex="-1" id="customAlert">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Cancel Booking</h5>
+                          <button
+                            type="button"
+                            id="close-button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                            onclick="closeCustomAlert()"
+                          ></button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Are you sure you want to cancel this Booking?</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                            onclick="closeCustomAlert()"
+                          >
+                            No
+                          </button>
+                          <button
+                            id="cancelReservation"
+                            type="button"
+                            class="btn btn-danger"
+                          >
+                            Yes
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Custom Alert  Ends-->
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Need Our Help?</h5>
+                <span class="card-text d-flex justify-content-between">
+                  <p>Call us in case you face ant issue in our service</p>
+                  <p style="font-weight: bold">
+                    <i class="fa-solid fa-phone"></i> +91-XXX-XXX-XXXX
+                  </p>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="booking-confirm-bottom-right">
+            <div class="card" style="width: 100%">
+              <img
+                src="../Assets/kanatal-orchids.jpg"
+                id="reserve-card-img"
+                class="card-img-top"
+                alt=""
+                style="object-fit: cover; height: 100%; width: 100%"
+              />
+              <div class="card-body hotel-details">
+                <div class="card-body-top">
+                  <h5 class="card-title" id="hotel-title">Kanatal Orchids</h5>
+                  <p class="card-text">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span id="stay-location">Dehradun</span>, Uttrakhand
+                  </p>
+                </div>
+                <div class="card-body-mid">
+                  <h5>Price Detail</h5>
+                  <span class="d-flex justify-content-between">
+                    <p>
+                      &#x20B9; <span id="normal-price">2000</span> x
+                      <span id="stay-night">3</span> nights
+                    </p>
+                    <p>&#x20B9; <span id="total-price">6000</span></p>
+                  </span>
+                  <span class="d-flex justify-content-between">
+                    <p>Tax(10%)</p>
+                  </span>
+                </div>
+                <div
+                  class="card-body-bottom"
+                  style="font-weight: bold; font-size: 20px"
+                >
+                  <span class="d-flex justify-content-between">
+                    <p>Total</p>
+                    <p>&#x20B9; <span id="booked-price"></span></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script type="module" src="/js/confirmation.js"></script>
+</html>

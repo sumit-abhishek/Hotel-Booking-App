@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  padding-left: 0 !important;
+}
+.rooms-main {
+  display: flex;
+  justify-content: center;
+  background-color: #e2e2e2;
+}
+.rooms {
+  width: 1200px;
+  display: flex;
+  border-radius: 10px;
+}
+.rooms-filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 2rem;
+  width: 20%;
+  padding-left: 2rem;
+}
+.reset-rooms-filter {
+  width: 100%;
+}
+.reset-rooms-filter input {
+  width: 100%;
+}
+.search-rooms-filter {
+  width: 100%;
+}
+.search-rooms-filter input {
+  width: 100%;
+}
+.popular-rooms-filter div div {
+  padding-left: 2rem !important;
+}
+/*************Room Availability Section CSS************************/
+.rooms-availability {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.popular-facilities {
+  display: flex;
+  justify-content: space-between;
+}
+.popular-facilities-left span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #00cc00;
+}
+.popular-facilities-left p {
+  font-weight: bold;
+}
+.card-title {
+  font-weight: bold;
+}
+.card {
+  background-image: url(../Assets/room-card-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 8px 7px 8px #8e604e;
+}
+.popular-facilities-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

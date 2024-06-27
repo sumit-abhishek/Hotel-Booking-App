@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.form-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+}
+.form-logo img {
+  width: 8.5rem;
+  object-fit: contain;
+}
+.login-main {
+  display: flex;
+  justify-content: center;
+}
+.login {
+  width: 1200px;
+  background-color: white;
+  display: flex;
+  justify-content: start;
+  margin-top: 5rem;
+  border-radius: 10px;
+}
+.login-image {
+  border-radius: 10px 0px 0px 10px;
+  width: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../Assets/signup-image.jpg);
+}
+.login-form-area-main {
+  width: 50%;
+  background-image: url(../Assets/why-us-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0px 10px 10px 0px;
+  color: white;
+}
+.login-form-area {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-right: 4rem;
+  padding-bottom: 1rem;
+  padding-left: 4rem;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.login-google {
+  display: flex;
+  background: #d3d3d33f;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #d3d3d3;
+  line-height: 2.5rem;
+  border-radius: 0.375rem;
+}
+.login-form h1 {
+  text-align: center;
+}
+.or {
+  text-align: center;
+  position: relative;
+  color: #484848;
+}
+.or:before {
+  content: " ";
+  height: 1px;
+  width: 200px;
+  background: #e1e1e1c1;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+.or:after {
+  content: " ";
+  height: 1px;
+  width: 200px;
+  background: #e1e1e1c1;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+.login-form a {
+  text-decoration: none;
+}

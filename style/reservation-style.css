@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.reservation-main {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(0 0 0 / 9%);
+}
+.reservation {
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  gap: 1rem;
+  padding: 1rem;
+  height: 100%;
+}
+.reservation-top {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+}
+.reservation-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+.reservation-bottom-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 1rem;
+}
+.booking,
+.payment,
+.policy,
+.hotel-reservation-details {
+  box-shadow: 8px 7px 8px #0000005c;
+  border-radius: 0.375rem;
+}
+.payment {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  background: #fff;
+  height: 100%;
+  padding: 1rem 2rem;
+}
+.input-group label,
+.input-group span {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.input-group input,
+.input-group select {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.address > div > input,
+.address > div > select {
+  border-radius: 30px;
+}
+.card-date > div > input {
+  border-radius: 30px;
+}
+.reservation-bottom-right {
+  width: 40%;
+}
+.hotel-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.card-body-mid {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+  border-width: 100%;
+}
+.card-body-top {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+}
+.booking-summary-lable {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* custom alert css */
+

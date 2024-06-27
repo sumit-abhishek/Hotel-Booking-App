@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reservation Page - Eureka</title>
+    <link rel="stylesheet" href="../style/reservation-style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  <body>
+    <section class="reservation-main">
+      <div class="reservation">
+        <div class="reservation-top">
+          <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+              <li class="breadcrumb-item">
+                <a href="rooms.html">Hotel Details</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Reservation
+              </li>
+            </ol>
+          </nav>
+        </div>
+        <h4>Confirm Your Reservation</h4>
+        <div class="reservation-bottom">
+          <div class="reservation-bottom-left">
+            <div class="booking">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Booking Summary</h5>
+                  <div class="row" id="booking-confirm-form">
+                    <div class="col-md-3">
+                      <label class="form-label booking-summary-lable"
+                        ><i class="fa-solid fa-location-dot"></i>Location</label
+                      >
+                      <div id="location" class="form-control text-center">
+                        Location
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <label class="form-label booking-summary-lable"
+                        ><i class="fa-regular fa-calendar"></i>Check-In
+                        Date</label
+                      >
+                      <div id="checkInDate" class="form-control text-center">
+                        Check-In Date
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <label class="form-label booking-summary-lable"
+                        ><i class="fa-regular fa-calendar"></i>Check-Out
+                        Date</label
+                      >
+                      <div id="checkOutDate" class="form-control text-center">
+                        Check-Out Date
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <label class="form-label booking-summary-lable"
+                        ><i class="fa-solid fa-user"></i>Guests</label
+                      >
+                      <div id="guests" class="form-control text-center">
+                        No. of Guests
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="payment">
+              <h5 class="card-heading">Pay With</h5>
+              <div class="input-group">
+                <label class="input-group-text" for="inputGroupSelect01"
+                  ><i class="fa-regular fa-credit-card"></i
+                ></label>
+                <select class="form-select" id="inputGroupSelect01">
+                  <option value="1">Credit Card</option>
+                  <option value="2">Debit Card</option>
+                  <option value="3">UPI</option>
+                  <option value="4">Net Banking</option>
+                </select>
+              </div>
+              <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">
+                  <i class="fa-regular fa-credit-card"></i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Card Number"
+                  aria-label="Username"
+                  aria-describedby="addon-wrapping"
+                  required
+                />
+              </div>
+              <div class="row card-date">
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Date of Expiry"
+                    aria-label="Date of Expiry"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="CVV"
+                    aria-label="CVV"
+                  />
+                </div>
+              </div>
+              <form class="address row g-2">
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label">Address</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputAddress"
+                    placeholder="Address Line 1"
+                  />
+                </div>
+                <div class="col-12">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputAddress2"
+                    placeholder="Address Line 2"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="inputCity" class="form-label">City</label>
+                  <input type="text" class="form-control" id="inputCity" />
+                </div>
+                <div class="col-md-4">
+                  <label for="inputState" class="form-label">State</label>
+                  <select id="inputState" class="form-select">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <label for="inputZip" class="form-label">Zip</label>
+                  <input type="text" class="form-control" id="inputZip" />
+                </div>
+              </form>
+            </div>
+            <div class="policy card">
+              <div class="card-body">
+                <p class="card-text">
+                  By selecting the button below, I agree to the Hotel's Rules,
+                  Ground rules for guests, and authorize Hotel to charge my
+                  payment method for any damages. <br />
+                  I also agree to the <a href="#">updated Terms and Service</a>,
+                  <a href="#">payment Terms and Service</a>, and acknowledge the
+                  <a href="">Privacy Policy</a>
+                </p>
+                <button
+                  class="btn btn-primary"
+                  form="booking-confirm-form"
+                  onclick="submit()"
+                >
+                  Confirm and Book
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="reservation-bottom-right">
+            <div class="hotel-reservation-details">
+              <div class="card" style="width: 100%">
+                <img
+                  src="../Assets/kanatal-orchids.jpg"
+                  class="card-img-top"
+                  id="card-img"
+                  alt=""
+                  style="object-fit: cover; height: 100%; width: 100%"
+                />
+                <div class="card-body hotel-details">
+                  <div class="card-body-top">
+                    <h5 class="card-title" id="hotel-name">Kanatal Orchids</h5>
+                    <p class="card-text">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <span id="stay-location">Dehradun</span>, Uttrakhand
+                    </p>
+                  </div>
+                  <div class="card-body-mid">
+                    <h5>Price Detail</h5>
+                    <span class="d-flex justify-content-between">
+                      <p>
+                        &#x20B9; <span id="normal-price">2000</span> x
+                        <span id="stay-night">3</span> nights
+                      </p>
+                      <p>&#x20B9; <span id="total-price">6000</span></p>
+                    </span>
+                    <span class="d-flex justify-content-between">
+                      <p>Tax(10%)</p>
+                    </span>
+                  </div>
+                  <div
+                    class="card-body-bottom"
+                    style="font-weight: bold; font-size: 20px"
+                  >
+                    <span class="d-flex justify-content-between">
+                      <p>Total</p>
+                      <p>&#x20B9; <span id="booked-price">6600</span></p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script type="module" src="/js/reservation.js"></script>
+</html>

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Hotel Booking App: Eureka</title>
+  </head>
+  <body>
+    <!-------------------------Header Starts Here----------------------->
+    <div class="background">
+      <section class="header">
+        <div class="header-main">
+          <ul class="header-lists">
+            <li><img src="Assets/logo.png" alt="" /></li>
+            <li>
+              <div class="navbar">
+                <a href="#">Home</a>
+                <a href="#">Rooms</a>
+                <a href="#">Blog</a>
+                <a href="#">About</a>
+                <a href="pages/login.html" id="login-button">Login</a>
+                <a href="pages/signup.html" id="register-button">Register</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div
+          id="logged-in-user"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+          onclick="showUserAlert()"
+        >
+          <img
+            src="Assets/user-image.png"
+            alt=""
+            style="object-fit: cover; height: 100%; width: 100%"
+          />
+        </div>
+      </section>
+      <!--------------------------- Custom Account Details Start ------------------------------------->
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div
+              class="modal-header d-flex flex-column align-items-center gap-3"
+              style="height: 200px"
+            >
+              <div
+                class="modal-header-top d-flex align-items-center justify-content-center"
+              >
+                <h4
+                  class="modal-subtitle fs-6"
+                  id="user-email"
+                  style="position: absolute"
+                >
+                  user@mail.com
+                </h4>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                  style="margin-left: 28rem; width: 10%"
+                  onclick="closeUserAlert()"
+                ></button>
+              </div>
+
+              <div
+                class="modal-header-bottom d-flex flex-column align-items-center"
+                style="height: 80%"
+              >
+                <div
+                  class="modal-header-bottom-img"
+                  style="
+                    height: 100%;
+                    max-width: max-content;
+                    border-radius: 50%;
+                    overflow: hidden;
+                  "
+                >
+                  <img
+                    src="Assets/user-image.png"
+                    alt=""
+                    style="object-fit: contain; width: 100%; height: 100%"
+                  />
+                </div>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Hello, <span id="user-name">User</span>
+                </h1>
+              </div>
+            </div>
+            <div class="modal-body">
+              <h4 class="fs-5">Manage</h4>
+              <ul class="list-group">
+                <li
+                  class="list-group-item list-group-item-action"
+                  type="button"
+                >
+                  <i class="fa-solid fa-list-check"></i> Manage Account
+                </li>
+                <li
+                  class="list-group-item list-group-item-action"
+                  type="button"
+                >
+                  <i class="fa-regular fa-user"></i>
+                  My Profile
+                </li>
+                <li
+                  class="list-group-item list-group-item-action"
+                  type="button"
+                >
+                  <i class="fa-regular fa-bell"></i>
+                  Notification
+                </li>
+                <li
+                  class="list-group-item list-group-item-action"
+                  type="button"
+                  data-bs-dismiss="modal"
+                  onclick="closeUserAlert(),signoutUser()"
+                >
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                  Sign Out
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---------------------- Custom Account Details Ends-------------------------->
+      <!-------------------------Header Ends Here----------------------->
+      <!-------------------------Search Bar Starts Here----------------------->
+      <section class="search-bar">
+        <div class="search-bar-main">
+          <div class="search-bar-heading">
+            <h1>Find Your Stay with <span>Eureka!</span></h1>
+          </div>
+          <form class="search-bar-details" id="search-locations">
+            <select
+              class="form-select"
+              id="searchLocation"
+              aria-label="Default select example"
+            >
+              <option selected disabled>Select Location</option>
+              <option value="Lansdowne">Lansdowne</option>
+              <option value="Kanatal">Kanatal</option>
+              <option value="Mussorrie">Mussorrie</option>
+              <option value="Harshil">Harshil</option>
+              <option value="Chakrata">Chakrata</option>
+              <option value="Chopta">Chopta</option>
+            </select>
+            <input
+              id="checkInDate"
+              pattern="dd-mm-yyyy"
+              placeholder="Check-In Date"
+              class="form-control"
+              type="date"
+            />
+            <input
+              id="checkOutDate"
+              pattern="dd-mm-yyyy"
+              placeholder="Check-Out Date"
+              class="form-control"
+              type="date"
+            />
+
+            <input
+              type="number"
+              id="numberGuest"
+              class="form-control"
+              placeholder="Guests"
+              style="width: 100px"
+              min="1"
+            />
+            <button class="btn btn-primary" type="submit">Search</button>
+          </form>
+        </div>
+      </section>
+    </div>
+    <!-------------------------Search Bar Ends Here----------------------->
+    <!-----------------------Why Choose US Starts Here-------------------->
+    <div class="why-us-main">
+      <div class="why-us">
+        <div class="why-us-heading">
+          <h2>Here's Why People Choose Eureka</h2>
+        </div>
+        <div class="why-us-details">
+          <div class="card-why-us">
+            <i class="fa-regular fa-calendar-check fa-2xl"></i>
+            <div class="card-why-us-details">
+              <h4>Free Cancellation</h4>
+              <p>
+                Plans changed? No worries! Our free cancellation policy ensures
+                flexibility and convenience for all your booking needs.
+              </p>
+            </div>
+          </div>
+          <div class="card-why-us">
+            <i class="fa-solid fa-tag fa-2xl"></i>
+            <div class="card-why-us-details">
+              <h4>Best Travel Deals</h4>
+              <p>
+                Get the best travel deals with us, providing affordable luxury
+                and making every adventure more accessible.
+              </p>
+            </div>
+          </div>
+          <div class="card-why-us">
+            <i class="fa-solid fa-award fa-2xl"></i>
+            <div class="card-why-us-details">
+              <h4>Trusted and Free</h4>
+              <p>
+                Our reputation for trusted, free service guarantees a worry-free
+                experience with no hidden expenses.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-----------------------Why Choose US Ends Here-------------------->
+
+    <!-------------------------Popular Destinations Section Starts Here----------------------->
+    <section class="destination-main">
+      <div class="destination">
+        <div class="destination-heading">
+          <h2>Popular Destinations You Can Travel</h2>
+          <p>
+            Discover breathtaking hilly destinations with stunning vistas,
+            perfect for adventure seekers and nature lovers alike.
+          </p>
+        </div>
+        <div class="destination-section">
+          <div class="card" style="width: 22rem">
+            <img
+              src="Assets/location-lansdowne.jpg"
+              class="card-img-top"
+              alt="..."
+              style="object-fit: cover; height: 100%; width: 100%"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Lansdowne</h5>
+              <p class="card-text">
+                Discover Lansdowne Hill Station's charm with its scenic beauty,
+                colonial architecture, and peaceful surroundings ideal for
+                relaxation and rejuvenation.
+              </p>
+              <a href="#" class="btn btn-primary">Check Availability</a>
+            </div>
+          </div>
+          <div class="card" style="width: 22rem">
+            <img
+              src="Assets/location-kanatal.jpg"
+              class="card-img-top"
+              alt="..."
+              style="object-fit: cover; height: 100%; width: 100%"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kanatal</h5>
+              <p class="card-text">
+                Kanatal Hill Station offers panoramic mountain views, serene
+                surroundings, and adventure activities, making it a perfect
+                escape for nature enthusiasts.
+              </p>
+              <a href="#" class="btn btn-primary">Check Availability</a>
+            </div>
+          </div>
+          <div class="card" style="width: 22rem">
+            <img
+              src="Assets/kanatal.jpg"
+              class="card-img-top"
+              alt="..."
+              style="object-fit: cover; height: 100%; width: 100%"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Chakrata</h5>
+              <p class="card-text">
+                Experience Chakrata Hill Station's tranquility, where untouched
+                beauty, peaceful surroundings, and fresh mountain air create an
+                idyllic retreat.
+              </p>
+              <a href="#" class="btn btn-primary">Check Availability</a>
+            </div>
+          </div>
+          <div class="card" style="width: 22rem">
+            <img
+              src="Assets/location-harshil.jpg"
+              class="card-img-top"
+              alt="..."
+              style="object-fit: cover; height: 100%; width: 100%"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Harshil</h5>
+              <p class="card-text">
+                Discover Harshil Valley's charm with lush greenery, peaceful
+                villages, and breathtaking mountain scenery, ideal for nature
+                lovers and adventurers.
+              </p>
+              <a href="#" class="btn btn-primary">Check Availability</a>
+            </div>
+          </div>
+          <div class="card" style="width: 22rem">
+            <img
+              src="Assets/location-mussoriee.jpg"
+              class="card-img-top"
+              alt="..."
+              style="object-fit: cover; height: 100%; width: 100%"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Mussoorie</h5>
+              <p class="card-text">
+                Mussoorie Hill Station, the "Queen of Hills," boasts
+                breathtaking views, serene trails, and a delightful ambiance for
+                relaxation and adventure.
+              </p>
+              <a href="#" class="btn btn-primary">Check Availability</a>
+            </div>
+          </div>
+          <div class="card" style="width: 22rem">
+            <img
+              src="Assets/location-chopta.jpg"
+              class="card-img-top"
+              alt="..."
+              style="object-fit: cover; height: 100%; width: 100%"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Chopta</h5>
+              <p class="card-text">
+                Chopta Hill Station features majestic peaks, verdant valleys,
+                and a tranquil atmosphere, making it an ideal destination for
+                nature lovers.
+              </p>
+              <a href="#" class="btn btn-primary">Check Availability</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-------------------------Popular Destinations Section Ends Here----------------------->
+    <section class="faq-main">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                How can I modify or cancel my reservation?
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <strong>This is the first item's accordion body.</strong> It is
+                shown by default, until the collapse plugin adds the appropriate
+                classes that we use to style each element. These classes control
+                the overall appearance, as well as the showing and hiding via
+                CSS transitions. You can modify any of this with custom CSS or
+                overriding our default variables. It's also worth noting that
+                just about any HTML can go within the
+                <code>.accordion-body</code>, though the transition does limit
+                overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                What payment methods do you accept?
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <strong>This is the second item's accordion body.</strong> It is
+                hidden by default, until the collapse plugin adds the
+                appropriate classes that we use to style each element. These
+                classes control the overall appearance, as well as the showing
+                and hiding via CSS transitions. You can modify any of this with
+                custom CSS or overriding our default variables. It's also worth
+                noting that just about any HTML can go within the
+                <code>.accordion-body</code>, though the transition does limit
+                overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Is it safe to book online through your website?
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <strong>This is the third item's accordion body.</strong> It is
+                hidden by default, until the collapse plugin adds the
+                appropriate classes that we use to style each element. These
+                classes control the overall appearance, as well as the showing
+                and hiding via CSS transitions. You can modify any of this with
+                custom CSS or overriding our default variables. It's also worth
+                noting that just about any HTML can go within the
+                <code>.accordion-body</code>, though the transition does limit
+                overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseFour"
+              >
+                Are there any additional fees or hidden charges?
+              </button>
+            </h2>
+            <div
+              id="collapseFour"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <strong>This is the fourth item's accordion body.</strong> It is
+                hidden by default, until the collapse plugin adds the
+                appropriate classes that we use to style each element. These
+                classes control the overall appearance, as well as the showing
+                and hiding via CSS transitions. You can modify any of this with
+                custom CSS or overriding our default variables. It's also worth
+                noting that just about any HTML can go within the
+                <code>.accordion-body</code>, though the transition does limit
+                overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFive"
+                aria-expanded="false"
+                aria-controls="collapseFive"
+              >
+                How do I know if my booking is confirmed?
+              </button>
+            </h2>
+            <div
+              id="collapseFive"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <strong>This is the fifth item's accordion body.</strong> It is
+                hidden by default, until the collapse plugin adds the
+                appropriate classes that we use to style each element. These
+                classes control the overall appearance, as well as the showing
+                and hiding via CSS transitions. You can modify any of this with
+                custom CSS or overriding our default variables. It's also worth
+                noting that just about any HTML can go within the
+                <code>.accordion-body</code>, though the transition does limit
+                overflow.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-------------------------Footer Section Starts Here----------------------->
+    <section class="footer-main">
+      <div class="footer">
+        <div class="footer-top">
+          <ul class="explore">
+            <li><h4>Explore</h4></li>
+            <li><a href="#">Lansdowne</a></li>
+            <li><a href="#">Chakrata</a></li>
+            <li><a href="#">Kanatal</a></li>
+            <li><a href="#">Mussoriee</a></li>
+            <li><a href="#">Harshil</a></li>
+            <li><a href="#">Chopta</a></li>
+          </ul>
+          <ul class="booking">
+            <li><h4>Booking</h4></li>
+            <li><a href="pages/rooms.html">Book Now</a></li>
+            <li><a href="#">Deals and Reward</a></li>
+            <li><a href="pages/signup.html">Sign In/Register</a></li>
+            <li><a href="#">My Account</a></li>
+          </ul>
+          <ul class="company">
+            <li><h4>Company</h4></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Our Partners</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+          <ul class="support">
+            <li><h4>Support</h4></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Live Chat</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Report an issue</a></li>
+          </ul>
+          <ul class="footer-social-links">
+            <li>
+              <a href="#"><i class="fa-brands fa-instagram fa-xl"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-facebook fa-xl"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-pinterest fa-xl"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom-left">
+            <span><i class="fa-regular fa-copyright"></i></span>
+            <p>2024 Eureka. All Right reserved</p>
+          </div>
+          <div class="footer-bottom-right">
+            <span>Terms & Conditions</span>
+            <span>Privacy Policy</span>
+            <span>Cookies Policy</span>
+            <span
+              ><a
+                href="pages/admin-login.html"
+                style="text-decoration: none; color: white"
+                >Admin</a
+              ></span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-------------------------Footer Section Ends Here----------------------->
+  </body>
+  <script type="module" src="js/index.js"></script>
+</html>

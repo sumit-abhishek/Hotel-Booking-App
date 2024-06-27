@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="../style/admin-style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"
+  ></script>
+  <body>
+    <section class="dashboard-main">
+      <div class="dashboard">
+        <div class="dashboard-top">
+          <div class="dashboard-top-logo">
+            <a href="/index.html"
+              ><img
+                src="../Assets/logo.png"
+                alt=""
+                style="object-fit: contain; height: 100%; width: 100%"
+            /></a>
+          </div>
+          <div class="dashboard-top-admin">
+            <div>
+              <img
+                src="../Assets/user-image.png"
+                alt=""
+                style="object-fit: contain; height: 100%; width: 100%"
+              />
+            </div>
+            <p>Hello, Admin</p>
+          </div>
+        </div>
+        <div class="dashboard-bottom">
+          <div class="dashboard-bottom-left">
+            <button
+              type="button"
+              class="btn btn-outline-light"
+              id="dashboard-button"
+              onclick="dashboard()"
+            >
+              <i class="fa-solid fa-user-tie"></i> Dashboard
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-light"
+              id="booking-button"
+              onclick="booking()"
+            >
+              <i class="fa-regular fa-bookmark"></i> Bookings
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-light"
+              id="property-button"
+              onclick="property()"
+            >
+              <i class="fa-solid fa-bell-concierge"></i> Properties
+            </button>
+            <button type="button" class="btn btn-outline-light">
+              <i class="fa-solid fa-gear"></i> Setting
+            </button>
+            <button type="button" class="btn btn-outline-light">
+              <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+          </div>
+
+          <!-- Dashboard Area -->
+
+          <div class="container dashboard-bottom-right" id="dashboard-area">
+            <div class="row">
+              <div class="col-sm-6 mb-3 mb-sm-0">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Bookings</h5>
+                    <p class="card-text">
+                      Access detailed insights into all your bookings. Monitor
+                      reservations, cancellations, and customer preferences in
+                      real time.
+                    </p>
+                    <button
+                      type="button"
+                      class="btn btn-primary position-relative"
+                      onclick="booking()"
+                    >
+                      Check Bookings
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Properties</h5>
+                    <p class="card-text">
+                      Access comprehensive details about all your properties.
+                      Monitor key metrics, occupancy rates, and maintenance
+                      statuses in one place.
+                    </p>
+                    <button class="btn btn-primary" onclick="property()">
+                      Check Properties
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Booking Area -->
+
+          <div class="dashboard-bottom-right" id="booking-area">
+            <div class="dashboard-bottom-right-top">
+              <div class="dashboard-bottom-right-top-heading">
+                <h3 class="display-6">Booking</h3>
+              </div>
+              <div class="dashboard-bottom-right-top-checking">
+                <div class="dashboard-bottom-right-top-checking-left">
+                  <div
+                    class="btn-group btn-group"
+                    role="group"
+                    aria-label="Small button group"
+                  >
+                    <button type="button" class="btn btn-outline-secondary">
+                      All (<span id="totalBooking"></span>)
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary">
+                      Cancelled (<span id="cancelledBooking"></span>)
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary">
+                      Confirmed (<span id="confirmBooking"></span>)
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dashboard-bottom-right-bottom">
+              <div class="container">
+                <div class="row booking-entity">
+                  <div class="col">ID</div>
+                  <div class="col">Customer</div>
+                  <div class="col">Hotel</div>
+                  <div class="col">Check-In Date</div>
+                  <div class="col">Check-Out Date</div>
+                  <div class="col">Booking Status</div>
+                  <div class="col">Actions</div>
+                </div>
+                <div class="booking-dashboard"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Property Area  -->
+
+          <div class="dashboard-bottom-right" id="property-area">
+            <div class="dashboard-bottom-right-top">
+              <div class="dashboard-bottom-right-top-heading">
+                <h3 class="display-6">Properties</h3>
+              </div>
+              <div class="dashboard-bottom-right-top-checking">
+                <div class="dashboard-bottom-right-top-checking-left">
+                  <div
+                    class="btn-group btn-group"
+                    role="group"
+                    aria-label="Small button group"
+                  >
+                    <button type="button" class="btn btn-outline-secondary">
+                      Total Properties (<span id="totalProperty">10</span>)
+                    </button>
+                  </div>
+                </div>
+                <div class="dashboard-bottom-right-top-checking-right">
+                  <div class="search-booking">
+                    <button
+                      type="button"
+                      class="btn btn-outline-secondary"
+                      onclick="propertyForm()"
+                    >
+                      <i class="fa-solid fa-plus"></i> Add Property
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dashboard-bottom-right-bottom">
+              <section class="properties-main">
+                <div class="container properties-entry">
+                  <div class="row properties">
+                    <div class="col-md-3">S.No</div>
+                    <div class="col-md-3">Hotel Name</div>
+                    <div class="col-md-3">Hotel Location</div>
+                    <div class="col-md-3">Actions</div>
+                  </div>
+                </div>
+                <div class="container property-list"></div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form For Adding Property -->
+    <section class="add-property" id="add-property-id">
+      <div class="add-property-form">
+        <form class="adding-form" id="property-form">
+          <div class="mb-3">
+            <label for="hotelName" class="form-label">Hotel Name</label>
+            <input type="text" class="form-control" id="hotelName" />
+          </div>
+          <div class="mb-3">
+            <label for="hotelLocation" class="form-label">Hotel Location</label>
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              id="hotelLocation"
+            >
+              <option selected disabled>Select Location</option>
+              <option value="Lansdowne">Lansdowne</option>
+              <option value="Kanatal">Kanatal</option>
+              <option value="Mussorrie">Mussorrie</option>
+              <option value="Harshil">Harshil</option>
+              <option value="Chakrata">Chakrata</option>
+              <option value="Chopta">Chopta</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="hotelDescription" class="form-label"
+              >Hotel Description</label
+            >
+            <textarea
+              class="form-control"
+              id="hotelDescription"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="hotelPrice" class="form-label">Hotel Price</label>
+            <input type="number" class="form-control" id="hotelPrice" />
+          </div>
+          <div class="mb-3">
+            <label for="hotelImg" class="form-label">Hotel Image</label>
+            <input type="text" class="form-control" id="hotelImg" />
+          </div>
+          <label for="hotelFacilities" class="form-label"
+            >Hotel Facilites</label
+          >
+          <div class="hotel-facilites mb-3">
+            <div class="form-check" id="checkedData">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="popular-filter"
+                value="freewifi"
+                id="freewifi"
+              />
+              <label class="form-check-label" for="freewifi"> Free Wifi </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="popular-filter"
+                value="breakfast"
+                id="breakfast"
+              />
+              <label class="form-check-label" for="breakfast">
+                Breakfast
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="popular-filter"
+                value="fittnessStudio"
+                id="fitness"
+              />
+              <label class="form-check-label" for="fitness">
+                Fitness Studio
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="popular-filter"
+                value="swimmingPool"
+                id="swimming"
+              />
+              <label class="form-check-label" for="swimming">
+                Swimming Pool
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="popular-filter"
+                value="petsAllowed"
+                id="pet"
+              />
+              <label class="form-check-label" for="pet"> Pets Allowed </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="popular-filter"
+                value="campsite"
+                id="camp"
+              />
+              <label class="form-check-label" for="camp">Campsite</label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="popular-filter"
+                value="bonfire"
+                id="bonfire"
+              />
+              <label class="form-check-label" for="bonfire">Bonfire</label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="popular-filter"
+                value="trekking"
+                id="trek"
+              />
+              <label class="form-check-label" for="trek">Trekking</label>
+            </div>
+          </div>
+          <button type="submit" id="addProperty" class="btn btn-primary">
+            Add Property
+          </button>
+          <button type="submit" id="propertyEdit" class="btn btn-secondary">
+            Edit Property
+          </button>
+        </form>
+        <button
+          id="form-close-button"
+          type="button"
+          form="property-form"
+          class="btn btn-outline-danger"
+          onclick="propertyFormCloseButton()"
+        >
+          <i class="fa-solid fa-rectangle-xmark"></i>
+        </button>
+      </div>
+    </section>
+  </body>
+  <script type="module" src="/js/admin.js"></script>
+</html>

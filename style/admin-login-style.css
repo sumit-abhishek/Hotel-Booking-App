@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+.admin-login-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+}
+.admin-login {
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  gap: 1rem;
+}
+.admin-login-form {
+  border: 1px solid #dbdfea;
+  border-radius: 0.3597rem;
+  padding: 2rem;
+}

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Room Details - Eureka</title>
+  </head>
+  <link rel="stylesheet" href="../style/rooms-style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"
+  ></script>
+  <body>
+    <section class="rooms-main">
+      <div class="rooms">
+        <form class="rooms-filter" id="search-filter">
+          <div class="location-rooms-filter">
+            <h4>Location</h4>
+            <ul>
+              <li class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="lansdowne"
+                  name="location"
+                  id="lansdowne"
+                />
+                <label class="form-check-label" for="lansdowne">
+                  Lansdowne
+                </label>
+              </li>
+              <li class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="chakrata"
+                  name="location"
+                  id="chakrata"
+                />
+                <label class="form-check-label" for="chakrata">
+                  Chakrata
+                </label>
+              </li>
+              <li class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="mussorrie"
+                  name="location"
+                  id="mussorrie"
+                />
+                <label class="form-check-label" for="mussorrie">
+                  Mussorrie
+                </label>
+              </li>
+              <li class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="kanatal"
+                  name="location"
+                  id="kanatal"
+                />
+                <label class="form-check-label" for="kanatal"> Kanatal </label>
+              </li>
+              <li class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="harshil"
+                  name="location"
+                  id="harshil"
+                />
+                <label class="form-check-label" for="harshil"> Harshil </label>
+              </li>
+              <li class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="chopta"
+                  name="location"
+                  id="chopta"
+                />
+                <label class="form-check-label" for="chopta"> Chopta </label>
+              </li>
+            </ul>
+          </div>
+          <div class="classification-rooms-filter">
+            <h4>Hotel Class</h4>
+            <ul>
+              <li class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="one-star"
+                  name="hotel-class"
+                  id="one-star"
+                />
+                <label class="form-check-label" for="one-star"> 1-Star </label>
+              </li>
+              <li class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="two-star"
+                  name="hotel-class"
+                  id="two-star"
+                />
+                <label class="form-check-label" for="two-star"> 2-Star </label>
+              </li>
+              <li class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="three-star"
+                  name="hotel-class"
+                  id="three-star"
+                />
+                <label class="form-check-label" for="three-star">
+                  3-Star
+                </label>
+              </li>
+              <li class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="four-star"
+                  name="hotel-class"
+                  id="four-star"
+                />
+                <label class="form-check-label" for="four-star"> 4-Star </label>
+              </li>
+              <li class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="five-star"
+                  name="hotel-class"
+                  id="five-star"
+                />
+                <label class="form-check-label" for="five-star"> 5-Star </label>
+              </li>
+            </ul>
+          </div>
+          <div class="popular-rooms-filter">
+            <h4>Popular Filters</h4>
+            <div class="popular-filter">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="popular-filter"
+                  value="freewifi"
+                  id="freewifi"
+                />
+                <label class="form-check-label" for="freewifi">
+                  Free Wifi
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="popular-filter"
+                  value="breakfast"
+                  id="breakfast"
+                />
+                <label class="form-check-label" for="breakfast">
+                  Breakfast
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="popular-filter"
+                  value="fitness"
+                  id="fitness"
+                />
+                <label class="form-check-label" for="fitness">
+                  Fitness Studio
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="popular-filter"
+                  value="swimming"
+                  id="swimming"
+                />
+                <label class="form-check-label" for="swimming">
+                  Swimming Pool
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="popular-filter"
+                  value="pet"
+                  id="pet"
+                />
+                <label class="form-check-label" for="pet"> Pets Allowed </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="popular-filter"
+                  value="camp"
+                  id="camp"
+                />
+                <label class="form-check-label" for="camp">Campsite</label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="popular-filter"
+                  value="bonfire"
+                  id="bonfire"
+                />
+                <label class="form-check-label" for="bonfire">Bonfire</label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="popular-filter"
+                  value="trek"
+                  id="trek"
+                />
+                <label class="form-check-label" for="trek">Trekking</label>
+              </div>
+            </div>
+          </div>
+          <div class="search-rooms-filter">
+            <input class="btn btn-primary" type="submit" value="Search" />
+          </div>
+          <div class="reset-rooms-filter">
+            <input class="btn btn-primary" type="reset" value="Reset" />
+          </div>
+        </form>
+        <div class="rooms-availability" style="width: 80%"></div>
+      </div>
+    </section>
+  </body>
+  <script src="/js/rooms.js"></script>
+</html>
