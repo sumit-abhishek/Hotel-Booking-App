@@ -115,6 +115,9 @@ a:nth-child(6) {
 .search-bar-details input {
   text-align: center;
 }
+#numberGuest {
+  width: 100px;
+}
 
 /* -----------Popular Destination CSS Starts Here------------ */
 .destination-main {

@@ -1,0 +1,59 @@
+@media only screen and (max-width: 768px) {
+  .navbar {
+    display: none !important;
+  }
+  .header-lists {
+    display: block;
+  }
+  .background {
+    /* background-size: contain; */
+  }
+  .search-bar {
+    padding-top: 2rem;
+  }
+  .search-bar-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #numberGuest {
+    width: 100%;
+  }
+  #location-search-btn {
+    width: 100%;
+  }
+  .destination {
+    padding: 0 1rem;
+  }
+  .why-us-heading {
+    padding: 0 1rem;
+  }
+  .why-us-details {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  .card-why-us {
+    border: 1px solid #fff;
+    width: 100%;
+    height: 30%;
+    padding: 1rem;
+  }
+  .faq {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .footer-top {
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-bottom-right {
+    width: 100%;
+    padding: 1rem;
+  }
+}
