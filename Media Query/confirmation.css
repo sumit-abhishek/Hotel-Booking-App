@@ -1,0 +1,14 @@
+@media only screen and (max-width: 768px) {
+  .booking-confirm-top {
+    padding-left: 2rem;
+  }
+  .booking-confirm-bottom {
+    flex-direction: column;
+  }
+  .booking-confirm-bottom-left {
+    width: 100%;
+  }
+  .booking-confirm-bottom-right {
+    width: 100%;
+  }
+}

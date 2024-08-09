@@ -1,0 +1,22 @@
+@media only screen and (max-width: 768px) {
+  .signup-image {
+    height: 500px;
+    width: 100%;
+  }
+  .signup-main {
+    flex-direction: column;
+  }
+  .signup {
+    width: 100%;
+  }
+  .signup-form-area-main {
+    width: 100%;
+  }
+  .signup {
+    flex-direction: column;
+  }
+  .or:before,
+  .or:after {
+    width: 90px;
+  }
+}
